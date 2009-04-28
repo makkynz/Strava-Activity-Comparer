@@ -1,3 +1,10 @@
+
+To run locally
+* start Ubuntu 18.04 on virtual box
+* then run docker-compose up --build
+* browse to bfrunclub.com:8080 .  need to host file to localhost
+* might need to recreate db on postgres container. fix this
+
 docker build . -t postgres_db --no-cache
 docker run -d -p 5432:5432 --restart unless-stopped postgres_db
 psql -h localhost -U postgres --password
@@ -30,3 +37,5 @@ use docker compose
 docker cp d0c008b1d53c:/usr/local/tomcat/conf/server.xml /home/anthony/Projects/StravaCustom
 
 docker exec -it 34b559e097ae bash
+
+

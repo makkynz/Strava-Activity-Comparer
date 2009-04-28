@@ -37,3 +37,5 @@ Cli
 * Strava API only allows for one application account.  So that's only one domain per app.
 * Add host file entry to point bfrunclub.com to localhost for development
 
+
+**Run locally**
