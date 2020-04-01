@@ -12,8 +12,8 @@
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro" rel="stylesheet">
-    <link  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link  href="https://developers.strava.com/strava-developers.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://developers.strava.com/strava-developers.css" rel="stylesheet">
 
     <title>Strava Activity Tracker</title>
 </head>
@@ -22,33 +22,19 @@
 <div class="section section-strava-api container">
     <div class="row cta-row">
         <div class="col">
-            <button id="btnGetActivities" class="btn btn-primary">Get Strava Activity</button>
+            <button class="btnGetActivities btn btn-primary">Get Strava Activities</button>
         </div>
 
         <div class="col">
+            <button class="btnGetActivities btn btn-primary">Get Strava Activities</button>
         </div>
 
         <div class="col">
-
-        </div>
-
-        <div class="col">
-
-        </div>
-
-        <div class="col">
-
+            <button class="btnGetActivities btn btn-primary">Get Strava Activities</button>
         </div>
     </div>
 </div>
 
-
-
-
-<script>
-
-
-</script>
 
 <script src="main.js"></script>
 </body>
