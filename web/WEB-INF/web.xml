@@ -24,4 +24,13 @@
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>StravaCallback</servlet-name>
+        <servlet-class>stravacustom.servlet.StravaCallback</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StravaCallback</servlet-name>
+        <url-pattern>/strava/callback</url-pattern>
+    </servlet-mapping>
+
 </web-app>
