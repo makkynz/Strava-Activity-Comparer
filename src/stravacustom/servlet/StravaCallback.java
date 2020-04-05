@@ -1,8 +1,10 @@
 package stravacustom.servlet;
 
-import stravacustom.domain.services.StravaApi;
+import org.json.JSONObject;
+import stravacustom.data.AthleteRepository;
+import stravacustom.domain.entities.Athlete;
+import stravacustom.domain.services.Strava;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +15,12 @@ public class StravaCallback extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        new StravaApi().processAuthorizationCode(req.getParameter("code"));
+        JSONObject jsonObject = new Strava().processAuthorizationCode(req.getParameter("code"));
+
+        Athlete athlete =  Athlete.getNewOrExisting(jsonObject);
+
+        AthleteRepository.save(athlete);
+
         resp.sendRedirect("/index.jsp");
     }
 }

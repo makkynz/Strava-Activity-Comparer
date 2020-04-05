@@ -1,7 +1,9 @@
 package stravacustom.domain.entities;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import stravacustom.data.AthleteRepository;
+import stravacustom.domain.services.Strava;
 
 import java.util.Date;
 import java.util.UUID;
@@ -49,7 +51,22 @@ public class Athlete {
         return new Athlete(stravaJson);
     }
 
+    public  void updateAccessToken() {
+        Strava api = new Strava();
+        JSONObject stravaJson = api.getNewAccessToken(this.refreshToken);
+        this.accessToken = stravaJson.getString("access_token");
+        this.refreshToken = stravaJson.getString("refresh_token");
+        this.dateUpdated = new Date();
+        AthleteRepository.save(this);
+    }
 
+    public  void updateActivities() {
+        Strava api = new Strava();
+        JSONArray stravaJson = api.getActivites(this.accessToken, this.refreshToken);
+        this.activitiesJson = stravaJson.toString();
+        this.dateUpdated = new Date();
+        AthleteRepository.save(this);
+    }
 
     public UUID getId() {
         return id;
