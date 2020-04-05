@@ -15,7 +15,7 @@ public class DbConnection implements DbConnectionInterface, AutoCloseable  {
             e.printStackTrace();
         }
         try {
-            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/bank_analyser", "postgres", "T1g3rf00t1981");
+            connection = DriverManager.getConnection("jdbc:postgresql://192.168.1.5:5432/strava-custom", "postgres", "postgres");
         } catch (SQLException e) {
            throw new RuntimeException(e);
     }
