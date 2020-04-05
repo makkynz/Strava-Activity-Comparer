@@ -1,23 +1,19 @@
 package stravacustom.utils;
 
-import com.owlike.genson.Genson;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.message.BasicNameValuePair;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class HttpHelper {
@@ -32,7 +28,7 @@ public class HttpHelper {
             e.printStackTrace();
         }
 
-        String rawResponse = extractResponseString(httppost);
+        String rawResponse = doRequest(httppost);
 
         return rawResponse;
 
@@ -45,20 +41,21 @@ public class HttpHelper {
         }
 
 
-        String rawResponse = extractResponseString(httpGet);
+        String rawResponse = doRequest(httpGet);
 
         return rawResponse;
 
     }
 
-    private static String extractResponseString(HttpRequestBase post) {
+    private static String doRequest(HttpRequestBase req) {
         HttpClient httpclient = HttpClients.createDefault();
         HttpResponse response;
         String rawResponse = null;
 
+        System.out.printf("HTTP ("+req.getMethod()+") request to " + req.getURI() + "\n");
         //capture response json
         try {
-            response = httpclient.execute(post);
+            response = httpclient.execute(req);
 
             HttpEntity entity = response.getEntity();
 
@@ -67,6 +64,7 @@ public class HttpHelper {
                     rawResponse = IOUtils.toString(instream);
                 }
             }
+            System.out.printf("Response: " + rawResponse+ "\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

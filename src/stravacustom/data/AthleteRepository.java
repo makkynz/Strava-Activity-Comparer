@@ -17,6 +17,8 @@ public class AthleteRepository implements RepositoryInterface<Athlete> {
         _connection = dbConnection.getConnection();
     }
 
+
+
     @Override
     public List<Athlete> getAll() {
         var athletes = new ArrayList<Athlete>();
@@ -130,7 +132,7 @@ public class AthleteRepository implements RepositoryInterface<Athlete> {
         return athlete;
     }
 
-    public static void Save(Athlete athlete){
+    public static void save(Athlete athlete){
 
         try (var dbConnection = new DbConnection()) {
             var repo = new AthleteRepository(dbConnection);
@@ -164,7 +166,12 @@ public class AthleteRepository implements RepositoryInterface<Athlete> {
         return null;
     }
 
-
+    public static List<Athlete> getAllAthletes() {
+        try (var dbConnection = new DbConnection()) {
+            var repo = new AthleteRepository(dbConnection);
+            return repo.getAll();
+        }
+    }
 
 
 }

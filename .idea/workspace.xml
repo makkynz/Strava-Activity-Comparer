@@ -7,15 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="791b06e3-3dca-4202-b384-ae34f4831dd6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/antho.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stravacustom/data/AthleteRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stravacustom/data/NamedParamStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stravacustom/domain/entities/Athlete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stravacustom/utils/HttpHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stravacustom/console/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stravacustom/console/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stravacustom/data/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stravacustom/data/DbConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stravacustom/data/AthleteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stravacustom/data/AthleteRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stravacustom/domain/services/StravaApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stravacustom/domain/services/StravaApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stravacustom/utils/HttpHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stravacustom/utils/HttpHelper.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/stravacustom/domain/services/StravaApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="516">
+              <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/stravacustom/data/AthleteRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="84" column="63" lean-forward="true" selection-start-line="84" selection-start-column="63" selection-end-line="84" selection-end-column="63" />
+            <state relative-caret-position="208">
+              <caret line="134" column="27" selection-start-line="134" selection-start-column="27" selection-end-line="134" selection-end-column="27" />
               <folding>
                 <element signature="e#421#422#0" expanded="true" />
                 <element signature="e#479#480#0" expanded="true" />
@@ -72,10 +67,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/stravacustom/console/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/stravacustom/utils/HttpHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="245">
+              <caret line="59" column="29" lean-forward="true" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,18 +113,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="9" column="60" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/stravacustom/data/NamedParamStatement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -156,10 +151,12 @@
       <find>transaction</find>
       <find>,</find>
       <find>\n</find>
+      <find>?</find>
     </findStrings>
     <replaceStrings>
       <replace>stravaJson</replace>
       <replace>athlete</replace>
+      <replace>:</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -183,13 +180,13 @@
         <option value="$PROJECT_DIR$/src/stravacustom/servlet/StravaCallback.java" />
         <option value="$PROJECT_DIR$/web/main.js" />
         <option value="$PROJECT_DIR$/src/stravacustom/domain/entities/Activity.java" />
-        <option value="$PROJECT_DIR$/src/stravacustom/console/Main.java" />
         <option value="$PROJECT_DIR$/src/stravacustom/data/DbConnection.java" />
         <option value="$PROJECT_DIR$/src/stravacustom/data/NamedParamStatement.java" />
         <option value="$PROJECT_DIR$/src/stravacustom/domain/entities/Athlete.java" />
-        <option value="$PROJECT_DIR$/src/stravacustom/utils/HttpHelper.java" />
         <option value="$PROJECT_DIR$/src/stravacustom/domain/services/StravaApi.java" />
         <option value="$PROJECT_DIR$/src/stravacustom/data/AthleteRepository.java" />
+        <option value="$PROJECT_DIR$/src/stravacustom/console/Main.java" />
+        <option value="$PROJECT_DIR$/src/stravacustom/utils/HttpHelper.java" />
       </list>
     </option>
   </component>
@@ -266,22 +263,6 @@
               <item name="StravaCustom" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="stravacustom" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StravaCustom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StravaCustom" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="stravacustom" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StravaCustom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StravaCustom" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="stravacustom" type="462c0819:PsiDirectoryNode" />
               <item name="servlet" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -344,7 +325,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Console Main">
+    <configuration name="Console Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="stravacustom.console.Main" />
+      <module name="StravaCustom" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WebApu Tomcat Local" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.30" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://strava-compare.com:8088/" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
@@ -420,6 +408,10 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Console Main" />
+      <item itemvalue="Tomcat Server.WebApu Tomcat Local" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -433,18 +425,18 @@
       <updated>1585698685556</updated>
       <workItem from="1585698686986" duration="19709000" />
       <workItem from="1585889797542" duration="14627000" />
-      <workItem from="1586064318122" duration="1395000" />
+      <workItem from="1586064318122" duration="4454000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35731000" />
+    <option name="totallyTimeSpent" value="38790000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19011667" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19011667" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -454,8 +446,8 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977462" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24911033" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.12811388" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33570582" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.12811388" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -486,7 +478,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/stravacustom/domain/services/StravaApi.java</url>
-          <line>37</line>
+          <line>24</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -656,13 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stravacustom/console/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stravacustom/data/DbConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -729,22 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stravacustom/domain/entities/Athlete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-514">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2125#2126#0" expanded="true" />
-            <element signature="e#2160#2161#0" expanded="true" />
-            <element signature="e#3792#3793#0" expanded="true" />
-            <element signature="e#3829#3830#0" expanded="true" />
-            <element signature="e#3889#3890#0" expanded="true" />
-            <element signature="e#3941#3942#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/httpclient-4.5.12.jar!/org/apache/http/client/methods/HttpPost.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -766,20 +735,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stravacustom/utils/HttpHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stravacustom/domain/services/StravaApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="516">
+          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -788,11 +747,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stravacustom/data/AthleteRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="84" column="63" lean-forward="true" selection-start-line="84" selection-start-column="63" selection-end-line="84" selection-end-column="63" />
+        <state relative-caret-position="208">
+          <caret line="134" column="27" selection-start-line="134" selection-start-column="27" selection-end-line="134" selection-end-column="27" />
           <folding>
             <element signature="e#421#422#0" expanded="true" />
             <element signature="e#479#480#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stravacustom/domain/entities/Athlete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-514">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2125#2126#0" expanded="true" />
+            <element signature="e#2160#2161#0" expanded="true" />
+            <element signature="e#3792#3793#0" expanded="true" />
+            <element signature="e#3829#3830#0" expanded="true" />
+            <element signature="e#3889#3890#0" expanded="true" />
+            <element signature="e#3941#3942#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stravacustom/console/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stravacustom/utils/HttpHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="59" column="29" lean-forward="true" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
