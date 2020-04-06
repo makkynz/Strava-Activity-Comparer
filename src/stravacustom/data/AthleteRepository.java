@@ -17,8 +17,6 @@ public class AthleteRepository implements RepositoryInterface<Athlete> {
         _connection = dbConnection.getConnection();
     }
 
-
-
     @Override
     public List<Athlete> getAll() {
         var athletes = new ArrayList<Athlete>();
@@ -56,8 +54,6 @@ public class AthleteRepository implements RepositoryInterface<Athlete> {
         }
         return null;
     }
-
-
 
     @Override
     public void add(Athlete athlete) {
@@ -123,10 +119,10 @@ public class AthleteRepository implements RepositoryInterface<Athlete> {
         athlete.setProfilePic(rs.getString("profile_pic"));
         athlete.setAccessToken(rs.getString("access_token"));
         athlete.setRefreshToken(rs.getString("refresh_token"));
-        athlete.setDateCreated(rs.getDate("date_created"));
-        athlete.setDateUpdated(rs.getDate("date_updated"));
+        athlete.setDateCreated(rs.getTimestamp("date_created"));
+        athlete.setDateUpdated(rs.getTimestamp("date_updated"));
         athlete.setRawJson(rs.getString("raw_strava_json"));
-        athlete.setTokenExpiry(rs.getDate("token_expiry"));
+        athlete.setTokenExpiry(rs.getTimestamp("token_expiry"));
         athlete.setActivitiesJson(rs.getString("activities_json"));
 
         return athlete;

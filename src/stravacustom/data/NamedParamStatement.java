@@ -69,7 +69,7 @@ public class NamedParamStatement implements Closeable {
 
     public void setDate(String name, Date value) {
         try {
-            prepStmt.setDate(getIndex(name),  new java.sql.Date(value.getTime()));
+            prepStmt.setTimestamp(getIndex(name),  new java.sql.Timestamp(value.getTime()));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

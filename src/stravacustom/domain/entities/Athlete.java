@@ -31,13 +31,14 @@ public class Athlete {
         this.id = java.util.UUID.randomUUID();
         this.accessToken = stravaJson.getString("access_token");
         this.refreshToken = stravaJson.getString("refresh_token");
+        this.tokenExpiry = new Date(Long.parseLong(stravaJson.getBigInteger("expires_at").toString())*1000);
         this.rawJson = stravaJson.toString();
         this.firstName = stravaJson.getJSONObject("athlete").getString("firstname");
         this.lastName = stravaJson.getJSONObject("athlete").getString("lastname");
         this.stravaId = stravaJson.getJSONObject("athlete").getBigInteger("id").toString();
         this.city = stravaJson.getJSONObject("athlete").getString("city");
         this.profilePic = stravaJson.getJSONObject("athlete").getString("profile");
-        this.tokenExpiry = new Date(Long.parseLong(stravaJson.getBigInteger("expires_at").toString()));
+
         this.dateCreated = new Date();
         this.dateUpdated = this.dateCreated;
 
@@ -51,18 +52,17 @@ public class Athlete {
         return new Athlete(stravaJson);
     }
 
-    public  void updateAccessToken() {
-        Strava api = new Strava();
-        JSONObject stravaJson = api.getNewAccessToken(this.refreshToken);
-        this.accessToken = stravaJson.getString("access_token");
-        this.refreshToken = stravaJson.getString("refresh_token");
-        this.dateUpdated = new Date();
-        AthleteRepository.save(this);
-    }
-
     public  void updateActivities() {
         Strava api = new Strava();
-        JSONArray stravaJson = api.getActivites(this.accessToken, this.refreshToken);
+        if(this.tokenExpiry.before(new Date())) {
+            JSONObject refreshObj = api.getNewAccessToken(this.refreshToken);
+            this.accessToken = refreshObj.getString("access_token");
+            this.refreshToken = refreshObj.getString("refresh_token");
+            this.tokenExpiry = new Date(Long.parseLong(refreshObj.getBigInteger("expires_at").toString()) * 1000);
+
+        }
+
+        JSONArray stravaJson = api.getActivities(this.accessToken, this.refreshToken);
         this.activitiesJson = stravaJson.toString();
         this.dateUpdated = new Date();
         AthleteRepository.save(this);

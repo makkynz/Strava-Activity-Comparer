@@ -34,17 +34,15 @@ public class HttpHelper {
 
     }
     public static String Get(String url, List<NameValuePair> header){
-
         HttpGet httpGet = new HttpGet(url);
+
         for (NameValuePair nameValuePair : header) {
             httpGet.setHeader(nameValuePair.getName(),nameValuePair.getValue());
         }
 
-
         String rawResponse = doRequest(httpGet);
 
         return rawResponse;
-
     }
 
     private static String doRequest(HttpRequestBase req) {
@@ -52,7 +50,7 @@ public class HttpHelper {
         HttpResponse response;
         String rawResponse = null;
 
-        System.out.printf("HTTP ("+req.getMethod()+") request to " + req.getURI() + "\n");
+        CliPrinter.printLn("HTTP ("+req.getMethod()+") request to " + req.getURI());
         //capture response json
         try {
             response = httpclient.execute(req);
@@ -64,7 +62,7 @@ public class HttpHelper {
                     rawResponse = IOUtils.toString(instream);
                 }
             }
-            System.out.printf("Response: " + rawResponse+ "\n");
+            CliPrinter.printLn("Response: " + rawResponse);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
