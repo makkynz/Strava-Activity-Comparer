@@ -29,20 +29,26 @@
         .activities{
             margin-top:20px;
         }
+        .alert-danger{
+            display: none;
+        }
 
     </style>
 </head>
 <body style="margin:20px">
 <h1>BF Run Club Lock Down Challenge</h1>
 <p>
-    Strava activity since Covid 19 lock down (26/03/2020)
+    Strava activity since Covid 19 lock down in NZ (26/03/2020)
     <img src="api_logo_pwrdBy_strava_horiz_light.svg" style="width:110px;"/>
 
 
 </p>
+<div class="alert alert-danger" role="alert">
+    Sorry, we can't get your activities unless you authorise to connect to Strava.
+</div>
 <p>
 <button class="btn btn-primary btnGetActivities" style="background-color: #fc5c19;
-    border-color: #fc5c19;">Get my activities</button></p>
+    border-color: #fc5c19;">Get My Activities</button></p>
 <div class="athletes card-deck"></div>
 <div class="activities">
 

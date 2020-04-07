@@ -16,8 +16,8 @@ function viewActivities() {
         "    </table>"
     let rowTemplate =
         "        <tr>\n" +
-        "            <th scope=\"row\"><a href='https://www.strava.com/activities/[activityId]'>[date]</a></th>\n" +
-        "            <td>[name]</td>\n" +
+        "            <td scope=\"row\">[date]</td>\n" +
+        "            <td><a href='https://www.strava.com/activities/[activityId]'>[name]</a></td>\n" +
         "            <td>[type]</td>\n" +
         "            <td>[distance] km</td>\n" +
         "            <td>[pace]</td>\n" +
@@ -79,10 +79,16 @@ function fancyTimeFormat(time)
 let dataJson = null;
 
 $(document).ready(function () {
+
+    $('.alert-danger').toggle(location.search.indexOf("result=noauth") > -1);
     $('.btnGetActivities').on('click', function () {
-        callbackUrl = `${window.location.origin}/strava/callback`
+        callbackUrl = window.location.origin+"/strava/callback"
         scope = "scope=activity:read";
-        window.location = `https://www.strava.com/oauth/authorize?client_id=45153&response_type=code&redirect_uri=${callbackUrl}&approval_prompt=force&${scope}`
+        window.location = "https://www.strava.com/oauth/authorize" +
+            "?client_id=45153" +
+            "&response_type=code" +
+            "&redirect_uri="+callbackUrl+"" +
+            "&approval_prompt=force&"+scope
     })
 
     function renderStats(json){

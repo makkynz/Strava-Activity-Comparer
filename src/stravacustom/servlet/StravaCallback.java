@@ -15,6 +15,11 @@ public class StravaCallback extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
+        if(req.getParameter("scope") == null  || !req.getParameter("scope").equals("read,activity:read")){
+            resp.sendRedirect("/?result=noauth");
+            return;
+        }
         JSONObject jsonObject = new Strava().processAuthorizationCode(req.getParameter("code"));
 
         Athlete athlete =  Athlete.getNewOrExisting(jsonObject);
@@ -22,6 +27,6 @@ public class StravaCallback extends HttpServlet {
         athlete.updateActivities();
 
 
-        resp.sendRedirect("/index.jsp");
+        resp.sendRedirect("/");
     }
 }
