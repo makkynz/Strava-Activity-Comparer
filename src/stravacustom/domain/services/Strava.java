@@ -9,6 +9,8 @@ import stravacustom.utils.ConfigHelper;
 import stravacustom.utils.HttpHelper;
 import stravacustom.utils.JsonHelper;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,9 +22,15 @@ public class Strava {
     }
 
     public JSONArray getActivities(String accessToken, String refreshToken) {
+        Long lockDownStartEpoch = null;
+        try {
+            lockDownStartEpoch = new SimpleDateFormat("dd/MM/yyyy").parse("25/03/2020").getTime() / 1000;
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
         List<NameValuePair> headers = new ArrayList<>(2);
         headers.add(new BasicNameValuePair("Authorization", "Bearer " +accessToken));
-        String rawResponse = HttpHelper.Get("https://www.strava.com/api/v3/athlete/activities", headers);
+        String rawResponse = HttpHelper.Get("https://www.strava.com/api/v3/athlete/activities?after="+lockDownStartEpoch, headers);
 
         return JsonHelper.parseStringToArray(rawResponse);
     }

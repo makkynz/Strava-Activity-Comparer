@@ -193,6 +193,9 @@ public class Athlete {
             jsonActivity.put("distance", activity.getDouble("distance"));
             jsonActivity.put("averageSpeed", activity.getDouble("average_speed"));
             jsonActivity.put("movingTime", activity.getDouble("moving_time"));
+            jsonActivity.put("activityId", activity.getBigInteger("id"));
+            jsonActivity.put("name", activity.getString("name"));
+
             activities.put(jsonActivity);
         }
         jsonAthlete.put("activities",activities);

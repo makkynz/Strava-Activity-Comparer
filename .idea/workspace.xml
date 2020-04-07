@@ -7,8 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="791b06e3-3dca-4202-b384-ae34f4831dd6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/StravaCustom_war.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stravacustom/domain/entities/Athlete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stravacustom/domain/entities/Athlete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stravacustom/webapi/Activities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stravacustom/webapi/Activities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stravacustom/domain/services/Strava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stravacustom/domain/services/Strava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stravacustom/servlet/StravaCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stravacustom/servlet/StravaCallback.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/main.js" afterDir="false" />
     </list>
@@ -26,8 +29,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/stravacustom/domain/services/Strava.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="351">
+              <caret line="26" column="104" selection-start-line="26" selection-start-column="104" selection-end-line="26" selection-end-column="104" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/stravacustom/servlet/StravaCallback.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/stravacustom/domain/entities/Athlete.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="194" column="40" selection-start-line="194" selection-start-column="30" selection-end-line="194" selection-end-column="40" />
+            <state relative-caret-position="347">
+              <caret line="196" column="34" selection-start-line="196" selection-start-column="30" selection-end-line="196" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1597#1598#0" expanded="true" />
@@ -71,20 +86,7 @@
                 <element signature="e#4703#4704#0" expanded="true" />
                 <element signature="e#4711#4712#0" expanded="true" />
                 <element signature="e#4748#4749#0" expanded="true" />
-                <element signature="e#5999#6000#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/stravacustom/data/AthleteRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="128" column="5" lean-forward="true" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
-              <folding>
-                <element signature="e#421#422#0" expanded="true" />
-                <element signature="e#479#480#0" expanded="true" />
+                <element signature="e#6140#6141#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/stravacustom/webapi/Activities.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="398">
+              <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,8 +128,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="30" column="35" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="35" />
+            <state relative-caret-position="398">
+              <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,8 +142,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="15" column="76" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
+            <state relative-caret-position="85">
+              <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -179,6 +190,7 @@
       <find>Syste</find>
       <find>?</find>
       <find>System.out.printf</find>
+      <find>RuntimeException</find>
     </findStrings>
     <replaceStrings>
       <replace>stravaJson</replace>
@@ -205,17 +217,17 @@
         <option value="$PROJECT_DIR$/src/stravacustom/utils/ConfigHelper.java" />
         <option value="$PROJECT_DIR$/src/stravacustom/domain/entities/Activity.java" />
         <option value="$PROJECT_DIR$/src/stravacustom/data/DbConnection.java" />
-        <option value="$PROJECT_DIR$/src/stravacustom/servlet/StravaCallback.java" />
         <option value="$PROJECT_DIR$/src/stravacustom/domain/services/StravaApi.java" />
         <option value="$PROJECT_DIR$/src/stravacustom/console/Main.java" />
         <option value="$PROJECT_DIR$/src/stravacustom/utils/CliPrinter.java" />
         <option value="$PROJECT_DIR$/src/stravacustom/data/NamedParamStatement.java" />
-        <option value="$PROJECT_DIR$/src/stravacustom/domain/services/Strava.java" />
         <option value="$PROJECT_DIR$/src/stravacustom/data/AthleteRepository.java" />
         <option value="$PROJECT_DIR$/src/stravacustom/utils/HttpHelper.java" />
         <option value="$PROJECT_DIR$/src/stravacustom/utils/JsonHelper.java" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/stravacustom/webapi/Activities.java" />
+        <option value="$PROJECT_DIR$/src/stravacustom/domain/services/Strava.java" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/stravacustom/servlet/StravaCallback.java" />
         <option value="$PROJECT_DIR$/src/stravacustom/domain/entities/Athlete.java" />
         <option value="$PROJECT_DIR$/web/main.js" />
       </list>
@@ -250,17 +262,51 @@
             <path>
               <item name="StravaCustom" type="b2602c69:ProjectViewProjectNode" />
               <item name="StravaCustom" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="StravaCustom" type="b2602c69:ProjectViewProjectNode" />
               <item name="StravaCustom" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stravacustom" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StravaCustom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StravaCustom" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stravacustom" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StravaCustom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StravaCustom" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stravacustom" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StravaCustom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StravaCustom" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stravacustom" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StravaCustom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StravaCustom" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stravacustom" type="462c0819:PsiDirectoryNode" />
+              <item name="webapi" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="StravaCustom" type="b2602c69:ProjectViewProjectNode" />
               <item name="StravaCustom" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StravaCustom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -279,11 +325,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BankAnalyser" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.27816093" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -414,12 +460,12 @@
       <updated>1585698685556</updated>
       <workItem from="1585698686986" duration="19709000" />
       <workItem from="1585889797542" duration="14627000" />
-      <workItem from="1586064318122" duration="19938000" />
+      <workItem from="1586064318122" duration="31095000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54274000" />
+    <option name="totallyTimeSpent" value="65431000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
@@ -435,8 +481,8 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977462" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.43179122" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.32502964" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.20877817" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32502964" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -467,7 +513,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/stravacustom/domain/services/Strava.java</url>
-          <line>51</line>
+          <line>59</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
@@ -673,16 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stravacustom/servlet/StravaCallback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stravacustom/utils/StringExtensions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -711,16 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="73" column="42" lean-forward="true" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stravacustom/domain/services/Strava.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -769,10 +795,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/stravacustom/domain/services/Strava.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="26" column="104" selection-start-line="26" selection-start-column="104" selection-end-line="26" selection-end-column="104" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stravacustom/servlet/StravaCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/stravacustom/webapi/Activities.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="398">
+          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -781,15 +827,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="30" column="35" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="35" />
+        <state relative-caret-position="398">
+          <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stravacustom/domain/entities/Athlete.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="194" column="40" selection-start-line="194" selection-start-column="30" selection-end-line="194" selection-end-column="40" />
+        <state relative-caret-position="347">
+          <caret line="196" column="34" selection-start-line="196" selection-start-column="30" selection-end-line="196" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1597#1598#0" expanded="true" />
@@ -821,15 +872,19 @@
             <element signature="e#4703#4704#0" expanded="true" />
             <element signature="e#4711#4712#0" expanded="true" />
             <element signature="e#4748#4749#0" expanded="true" />
-            <element signature="e#5999#6000#0" expanded="true" />
+            <element signature="e#6140#6141#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="15" column="76" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
+        <state relative-caret-position="85">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -838,12 +893,20 @@
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <artifact-editor />
+          <artifact-editor>
+            <show-content>
+              <type id="javaee-facet-resources" />
+              <type id="jpa-descriptors" />
+              <type id="artifact" />
+              <type id="library" />
+            </show-content>
+          </artifact-editor>
           <last-edited>StravaCustom:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.27816093" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -874,10 +937,11 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
+          <last-edited>JDK-13.0.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.27816093" />
               </list>
             </option>
           </splitter-proportions>

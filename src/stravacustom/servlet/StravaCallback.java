@@ -18,8 +18,9 @@ public class StravaCallback extends HttpServlet {
         JSONObject jsonObject = new Strava().processAuthorizationCode(req.getParameter("code"));
 
         Athlete athlete =  Athlete.getNewOrExisting(jsonObject);
-
         AthleteRepository.save(athlete);
+        athlete.updateActivities();
+
 
         resp.sendRedirect("/index.jsp");
     }
