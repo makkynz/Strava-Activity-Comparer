@@ -1,5 +1,12 @@
 package stravacustom.webapi;
 
+import com.sun.jersey.json.impl.provider.entity.JSONArrayProvider;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import stravacustom.data.AthleteRepository;
+import stravacustom.domain.entities.Athlete;
+import stravacustom.utils.JsonHelper;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -17,7 +24,14 @@ public class Activities {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get(@Context UriInfo info) {
 
+        JSONArray output = new JSONArray();
 
-        return Response.ok("Hello World").build();
+        for (Athlete a : AthleteRepository.getAllAthletes()) {
+            output.put(a.getSummaryJson());
+        }
+
+        String out = output.toString();
+
+        return Response.ok(out, MediaType.APPLICATION_JSON).build();
     }
 }

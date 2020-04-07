@@ -21,17 +21,18 @@
 <h1>Strava Activity Tracker</h1>
 <div class="section section-strava-api container">
     <div class="row cta-row">
-        <div class="col">
+        <div class="col-md-3">
             <button class="btnGetActivities btn btn-primary">Get Strava Activities</button>
         </div>
 
-        <div class="col">
-            <button class="btnGetActivities btn btn-primary">Get Strava Activities</button>
+
+    </div>
+    <div class="row cta-row">
+        <div class="col-md-3 output">
+
         </div>
 
-        <div class="col">
-            <button class="btnGetActivities btn btn-primary">Get Strava Activities</button>
-        </div>
+
     </div>
 </div>
 

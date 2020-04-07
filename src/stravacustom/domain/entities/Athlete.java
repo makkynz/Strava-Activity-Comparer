@@ -4,6 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import stravacustom.data.AthleteRepository;
 import stravacustom.domain.services.Strava;
+import stravacustom.utils.JsonHelper;
 
 import java.util.Date;
 import java.util.UUID;
@@ -42,6 +43,10 @@ public class Athlete {
         this.dateCreated = new Date();
         this.dateUpdated = this.dateCreated;
 
+    }
+
+    public String getFullName(){
+        return String.join(" ", this.firstName, this.lastName);
     }
 
     public static Athlete getNewOrExisting(JSONObject stravaJson){
@@ -166,6 +171,32 @@ public class Athlete {
 
     public String getActivitiesJson() {
         return activitiesJson;
+    }
+
+    public JSONArray getActivitiesAsJsonArray() {
+        return  JsonHelper.parseStringToArray( activitiesJson);
+    }
+
+    public JSONObject getSummaryJson() {
+
+        JSONObject jsonAthlete = new JSONObject();
+        jsonAthlete.put("stravaId", this.stravaId);
+        jsonAthlete.put("name", getFullName());
+        jsonAthlete.put("profilePic", this.profilePic);
+        JSONArray activities = new JSONArray();
+        JSONArray activitiesCache =  getActivitiesAsJsonArray();
+        for(int n = 0; n < activitiesCache.length(); n++) {
+            JSONObject activity = activitiesCache.getJSONObject(n);
+            JSONObject jsonActivity = new JSONObject();
+            jsonActivity.put("type", activity.getString("type"));
+            jsonActivity.put("startDate", activity.getString("start_date"));
+            jsonActivity.put("distance", activity.getDouble("distance"));
+            jsonActivity.put("averageSpeed", activity.getDouble("average_speed"));
+            jsonActivity.put("movingTime", activity.getDouble("moving_time"));
+            activities.put(jsonActivity);
+        }
+        jsonAthlete.put("activities",activities);
+        return  jsonAthlete;
     }
 
     public void setActivitiesJson(String activitiesJson) {
