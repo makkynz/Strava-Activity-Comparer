@@ -24,7 +24,7 @@ public class Strava {
     public JSONArray getActivities(String accessToken, String refreshToken) {
         Long lockDownStartEpoch = null;
         try {
-            lockDownStartEpoch = new SimpleDateFormat("dd/MM/yyyy").parse("25/03/2020").getTime() / 1000;
+            lockDownStartEpoch = new SimpleDateFormat("dd/MM/yyyy").parse("26/03/2020").getTime() / 1000;
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
