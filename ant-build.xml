@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="stravacustom" default="all">
+  
+  
+  <property file="ant-build.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.klib"/>
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+    <include name="*.swc"/>
+    <include name="*.war"/>
+    <include name="*.zip"/>
+    <include name="*.ane"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.jdk-13.0.1" value="${jdk.home.jdk-13.0.1}/bin"/>
+  <path id="jdk.classpath.jdk-13.0.1">
+    <fileset dir="${jdk.home.jdk-13.0.1}">
+      <include name="../jdk-13.0.1!/java.base"/>
+      <include name="../jdk-13.0.1!/java.compiler"/>
+      <include name="../jdk-13.0.1!/java.datatransfer"/>
+      <include name="../jdk-13.0.1!/java.desktop"/>
+      <include name="../jdk-13.0.1!/java.instrument"/>
+      <include name="../jdk-13.0.1!/java.logging"/>
+      <include name="../jdk-13.0.1!/java.management"/>
+      <include name="../jdk-13.0.1!/java.management.rmi"/>
+      <include name="../jdk-13.0.1!/java.naming"/>
+      <include name="../jdk-13.0.1!/java.net.http"/>
+      <include name="../jdk-13.0.1!/java.prefs"/>
+      <include name="../jdk-13.0.1!/java.rmi"/>
+      <include name="../jdk-13.0.1!/java.scripting"/>
+      <include name="../jdk-13.0.1!/java.se"/>
+      <include name="../jdk-13.0.1!/java.security.jgss"/>
+      <include name="../jdk-13.0.1!/java.security.sasl"/>
+      <include name="../jdk-13.0.1!/java.smartcardio"/>
+      <include name="../jdk-13.0.1!/java.sql"/>
+      <include name="../jdk-13.0.1!/java.sql.rowset"/>
+      <include name="../jdk-13.0.1!/java.transaction.xa"/>
+      <include name="../jdk-13.0.1!/java.xml"/>
+      <include name="../jdk-13.0.1!/java.xml.crypto"/>
+      <include name="../jdk-13.0.1!/jdk.accessibility"/>
+      <include name="../jdk-13.0.1!/jdk.aot"/>
+      <include name="../jdk-13.0.1!/jdk.attach"/>
+      <include name="../jdk-13.0.1!/jdk.charsets"/>
+      <include name="../jdk-13.0.1!/jdk.compiler"/>
+      <include name="../jdk-13.0.1!/jdk.crypto.cryptoki"/>
+      <include name="../jdk-13.0.1!/jdk.crypto.ec"/>
+      <include name="../jdk-13.0.1!/jdk.crypto.mscapi"/>
+      <include name="../jdk-13.0.1!/jdk.dynalink"/>
+      <include name="../jdk-13.0.1!/jdk.editpad"/>
+      <include name="../jdk-13.0.1!/jdk.hotspot.agent"/>
+      <include name="../jdk-13.0.1!/jdk.httpserver"/>
+      <include name="../jdk-13.0.1!/jdk.internal.ed"/>
+      <include name="../jdk-13.0.1!/jdk.internal.jvmstat"/>
+      <include name="../jdk-13.0.1!/jdk.internal.le"/>
+      <include name="../jdk-13.0.1!/jdk.internal.opt"/>
+      <include name="../jdk-13.0.1!/jdk.internal.vm.ci"/>
+      <include name="../jdk-13.0.1!/jdk.internal.vm.compiler"/>
+      <include name="../jdk-13.0.1!/jdk.internal.vm.compiler.management"/>
+      <include name="../jdk-13.0.1!/jdk.jartool"/>
+      <include name="../jdk-13.0.1!/jdk.javadoc"/>
+      <include name="../jdk-13.0.1!/jdk.jcmd"/>
+      <include name="../jdk-13.0.1!/jdk.jconsole"/>
+      <include name="../jdk-13.0.1!/jdk.jdeps"/>
+      <include name="../jdk-13.0.1!/jdk.jdi"/>
+      <include name="../jdk-13.0.1!/jdk.jdwp.agent"/>
+      <include name="../jdk-13.0.1!/jdk.jfr"/>
+      <include name="../jdk-13.0.1!/jdk.jlink"/>
+      <include name="../jdk-13.0.1!/jdk.jshell"/>
+      <include name="../jdk-13.0.1!/jdk.jsobject"/>
+      <include name="../jdk-13.0.1!/jdk.jstatd"/>
+      <include name="../jdk-13.0.1!/jdk.localedata"/>
+      <include name="../jdk-13.0.1!/jdk.management"/>
+      <include name="../jdk-13.0.1!/jdk.management.agent"/>
+      <include name="../jdk-13.0.1!/jdk.management.jfr"/>
+      <include name="../jdk-13.0.1!/jdk.naming.dns"/>
+      <include name="../jdk-13.0.1!/jdk.naming.rmi"/>
+      <include name="../jdk-13.0.1!/jdk.net"/>
+      <include name="../jdk-13.0.1!/jdk.pack"/>
+      <include name="../jdk-13.0.1!/jdk.rmic"/>
+      <include name="../jdk-13.0.1!/jdk.scripting.nashorn"/>
+      <include name="../jdk-13.0.1!/jdk.scripting.nashorn.shell"/>
+      <include name="../jdk-13.0.1!/jdk.sctp"/>
+      <include name="../jdk-13.0.1!/jdk.security.auth"/>
+      <include name="../jdk-13.0.1!/jdk.security.jgss"/>
+      <include name="../jdk-13.0.1!/jdk.unsupported"/>
+      <include name="../jdk-13.0.1!/jdk.unsupported.desktop"/>
+      <include name="../jdk-13.0.1!/jdk.xml.dom"/>
+      <include name="../jdk-13.0.1!/jdk.zipfs"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.jdk-13.0.1}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.jdk-13.0.1}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.jdk-13.0.1"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.commons-beanutils:commons-beanutils:1.9.3.classpath">
+    <pathelement location="${basedir}/lib/commons-beanutils-1.9.3.jar"/>
+    <pathelement location="${basedir}/lib/commons-collections-3.2.2.jar"/>
+    <pathelement location="${basedir}/lib/commons-logging-1.2.jar"/>
+  </path>
+  
+  <path id="library.lib.classpath">
+    <fileset dir="${basedir}/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  <path id="library.org.apache.commons:commons-configuration2:2.7.classpath">
+    <pathelement location="${basedir}/lib/commons-configuration2-2.7.jar"/>
+    <pathelement location="${basedir}/lib/commons-lang3-3.9.jar"/>
+    <pathelement location="${basedir}/lib/commons-logging-1.2.jar"/>
+    <pathelement location="${basedir}/lib/commons-text-1.8.jar"/>
+  </path>
+  
+  <path id="library.org.apache.httpcomponents:httpclient:4.5.12.classpath">
+    <pathelement location="${basedir}/lib/commons-codec-1.11.jar"/>
+    <pathelement location="${basedir}/lib/commons-logging-1.2.jar"/>
+    <pathelement location="${basedir}/lib/httpclient-4.5.12.jar"/>
+    <pathelement location="${basedir}/lib/httpcore-4.4.13.jar"/>
+  </path>
+  
+  <path id="library.org.json:json:20190722.classpath">
+    <pathelement location="${basedir}/lib/json-20190722.jar"/>
+  </path>
+  
+  
+  <!-- Global Libraries -->
+  
+  
+  <!-- Application Server Libraries -->
+  
+  <path id="library.tomcat_9.0.30.classpath">
+    <pathelement location="C:/Program Files (x86)/Apache Software Foundation/Tomcat 9.0/lib/jsp-api.jar"/>
+    <pathelement location="C:/Program Files (x86)/Apache Software Foundation/Tomcat 9.0/lib/servlet-api.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <fileset dir="${javac2.home}">
+      <include name="javac2.jar"/>
+      <include name="jdom.jar"/>
+      <include name="asm-all*.jar"/>
+      <include name="forms-*.jar"/>
+    </fileset>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module StravaCustom -->
+  
+  <dirname property="module.stravacustom.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.stravacustom" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.stravacustom" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.stravacustom" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.stravacustom" value="-encoding UTF-8 -source 12 -target 12 ${compiler.args}"/>
+  
+  <property name="stravacustom.output.dir" value="${module.stravacustom.basedir}/out/production/StravaCustom"/>
+  <property name="stravacustom.testoutput.dir" value="${module.stravacustom.basedir}/out/test/StravaCustom"/>
+  
+  <path id="stravacustom.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="stravacustom.module.production.classpath">
+    <path refid="${module.jdk.classpath.stravacustom}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.tomcat_9.0.30.classpath"/>
+    <path refid="library.org.apache.httpcomponents:httpclient:4.5.12.classpath"/>
+    <path refid="library.org.json:json:20190722.classpath"/>
+    <path refid="library.org.apache.commons:commons-configuration2:2.7.classpath"/>
+    <path refid="library.commons-beanutils:commons-beanutils:1.9.3.classpath"/>
+  </path>
+  
+  <path id="stravacustom.runtime.production.module.classpath">
+    <pathelement location="${stravacustom.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.org.apache.httpcomponents:httpclient:4.5.12.classpath"/>
+    <path refid="library.org.json:json:20190722.classpath"/>
+    <path refid="library.org.apache.commons:commons-configuration2:2.7.classpath"/>
+    <path refid="library.commons-beanutils:commons-beanutils:1.9.3.classpath"/>
+  </path>
+  
+  <path id="stravacustom.module.classpath">
+    <path refid="${module.jdk.classpath.stravacustom}"/>
+    <pathelement location="${stravacustom.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.tomcat_9.0.30.classpath"/>
+    <path refid="library.org.apache.httpcomponents:httpclient:4.5.12.classpath"/>
+    <path refid="library.org.json:json:20190722.classpath"/>
+    <path refid="library.org.apache.commons:commons-configuration2:2.7.classpath"/>
+    <path refid="library.commons-beanutils:commons-beanutils:1.9.3.classpath"/>
+  </path>
+  
+  <path id="stravacustom.runtime.module.classpath">
+    <pathelement location="${stravacustom.testoutput.dir}"/>
+    <pathelement location="${stravacustom.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.tomcat_9.0.30.classpath"/>
+    <path refid="library.org.apache.httpcomponents:httpclient:4.5.12.classpath"/>
+    <path refid="library.org.json:json:20190722.classpath"/>
+    <path refid="library.org.apache.commons:commons-configuration2:2.7.classpath"/>
+    <path refid="library.commons-beanutils:commons-beanutils:1.9.3.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.stravacustom">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.stravacustom">
+    <patternset refid="excluded.from.module.stravacustom"/>
+  </patternset>
+  
+  <path id="stravacustom.module.sourcepath">
+    <dirset dir="${module.stravacustom.basedir}">
+      <include name="src"/>
+      <include name="resources"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.stravacustom" depends="compile.module.stravacustom.production,compile.module.stravacustom.tests" description="Compile module StravaCustom"/>
+  
+  <target name="compile.module.stravacustom.production" depends="register.custom.compilers" description="Compile module StravaCustom; production classes">
+    <mkdir dir="${stravacustom.output.dir}"/>
+    <javac2 destdir="${stravacustom.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.stravacustom}/javac">
+      <compilerarg line="${compiler.args.stravacustom}"/>
+      <bootclasspath refid="stravacustom.module.bootclasspath"/>
+      <classpath refid="stravacustom.module.production.classpath"/>
+      <src refid="stravacustom.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.stravacustom"/>
+    </javac2>
+    
+    <copy todir="${stravacustom.output.dir}">
+      <fileset dir="${module.stravacustom.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.stravacustom.basedir}/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.stravacustom.tests" depends="register.custom.compilers,compile.module.stravacustom.production" description="compile module StravaCustom; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.stravacustom" description="cleanup module">
+    <delete dir="${stravacustom.output.dir}"/>
+    <delete dir="${stravacustom.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.stravacustom, clean.artifact.stravacustom:war_exploded, clean.artifact.stravacustom:war_exploded_prod" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.stravacustom" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.stravacustom:jar" value="${basedir}/out/artifacts/StravaCustom_jar"/>
+    <property name="artifact.output.stravacustom:war" value="${basedir}/out/artifacts/StravaCustom_war"/>
+    <property name="artifact.output.stravacustom:war_exploded" value="${basedir}/out/artifacts/StravaCustom_war_exploded"/>
+    <property name="artifact.output.stravacustom:war_exploded_prod" value="${basedir}/out/artifacts/StravaCustom_war_exploded_Prod"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.StravaCustom.jar" value="${artifacts.temp.dir}/StravaCustom.jar"/>
+    <property name="temp.jar.path.StravaCustom_war.war" value="${artifacts.temp.dir}/StravaCustom_war.war"/>
+  </target>
+
+  <target name="clean.artifact.stravacustom:war_exploded" description="clean StravaCustom:war exploded artifact output">
+    <delete dir="${artifact.output.stravacustom:war_exploded}"/>
+  </target>
+  
+  <target name="clean.artifact.stravacustom:war_exploded_prod" description="clean StravaCustom:war exploded Prod artifact output">
+    <delete dir="${artifact.output.stravacustom:war_exploded_prod}"/>
+  </target>
+  
+  <target name="artifact.stravacustom:jar" depends="init.artifacts, compile.module.stravacustom" description="Build &#39;StravaCustom:jar&#39; artifact">
+    <property name="artifact.temp.output.stravacustom:jar" value="${artifacts.temp.dir}/StravaCustom_jar"/>
+    <mkdir dir="${artifact.temp.output.stravacustom:jar}"/>
+    <jar destfile="${temp.jar.path.StravaCustom.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${stravacustom.output.dir}"/>
+      <zipfileset src="${basedir}/lib/json-20190722.jar"/>
+      <zipfileset src="${basedir}/lib/httpclient-4.5.12.jar"/>
+      <zipfileset src="${basedir}/lib/httpcore-4.4.13.jar"/>
+      <zipfileset src="${basedir}/lib/commons-logging-1.2.jar"/>
+      <zipfileset src="${basedir}/lib/commons-codec-1.11.jar"/>
+      <zipfileset src="${basedir}/lib/genson-1.6.jar"/>
+      <zipfileset src="${basedir}/lib/commons-io-2.6.jar"/>
+      <zipfileset src="${basedir}/lib/jaxb-api-2.3.1.jar"/>
+      <zipfileset src="${basedir}/lib/commons-cli-1.2.jar"/>
+      <zipfileset src="${basedir}/lib/commons-text-1.8.jar"/>
+      <zipfileset src="${basedir}/lib/jsr311-api-1.1.1.jar"/>
+      <zipfileset src="${basedir}/lib/commons-lang3-3.9.jar"/>
+      <zipfileset src="${basedir}/lib/postgresql-42.2.9.jar"/>
+      <zipfileset src="${basedir}/lib/jersey-bundle-1.18.3.jar"/>
+      <zipfileset src="${basedir}/lib/commons-beanutils-1.9.3.jar"/>
+      <zipfileset src="${basedir}/lib/commons-collections-3.2.2.jar"/>
+      <zipfileset src="${basedir}/lib/commons-configuration2-2.7.jar"/>
+    </jar>
+    <copy file="${temp.jar.path.StravaCustom.jar}" tofile="${artifact.temp.output.stravacustom:jar}/StravaCustom.jar"/>
+  </target>
+  
+  <target name="artifact.stravacustom:war" depends="init.artifacts, artifact.stravacustom:war_exploded" description="Build &#39;StravaCustom:war&#39; artifact">
+    <property name="artifact.temp.output.stravacustom:war" value="${artifacts.temp.dir}/StravaCustom_war"/>
+    <mkdir dir="${artifact.temp.output.stravacustom:war}"/>
+    <zip destfile="${temp.jar.path.StravaCustom_war.war}">
+      <zipfileset dir="${artifact.output.stravacustom:war_exploded}"/>
+      <zipfileset file="${basedir}/lib/commons-beanutils-1.9.3.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/lib/commons-logging-1.2.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/lib/commons-collections-3.2.2.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/lib/httpclient-4.5.12.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/lib/httpcore-4.4.13.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/lib/commons-logging-1.2.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/lib/commons-codec-1.11.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/lib/json-20190722.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/lib/commons-configuration2-2.7.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/lib/commons-lang3-3.9.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/lib/commons-text-1.8.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/lib/commons-logging-1.2.jar" prefix="WEB-INF/lib"/>
+    </zip>
+    <copy file="${temp.jar.path.StravaCustom_war.war}" tofile="${artifact.temp.output.stravacustom:war}/StravaCustom_war.war"/>
+  </target>
+  
+  <target name="artifact.stravacustom:war_exploded" depends="init.artifacts, compile.module.stravacustom" description="Build &#39;StravaCustom:war exploded&#39; artifact">
+    <mkdir dir="${artifact.output.stravacustom:war_exploded}"/>
+    <mkdir dir="${artifact.output.stravacustom:war_exploded}/WEB-INF"/>
+    <mkdir dir="${artifact.output.stravacustom:war_exploded}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.stravacustom:war_exploded}/WEB-INF/classes">
+      <fileset dir="${stravacustom.output.dir}"/>
+    </copy>
+    <mkdir dir="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib"/>
+    <copy file="${basedir}/lib/genson-1.6.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/genson-1.6.jar"/>
+    <copy file="${basedir}/lib/json-20190722.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/json-20190722.jar"/>
+    <copy file="${basedir}/lib/commons-io-2.6.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/commons-io-2.6.jar"/>
+    <copy file="${basedir}/lib/jaxb-api-2.3.1.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/jaxb-api-2.3.1.jar"/>
+    <copy file="${basedir}/lib/commons-cli-1.2.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/commons-cli-1.2.jar"/>
+    <copy file="${basedir}/lib/httpcore-4.4.13.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/httpcore-4.4.13.jar"/>
+    <copy file="${basedir}/lib/commons-text-1.8.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/commons-text-1.8.jar"/>
+    <copy file="${basedir}/lib/jsr311-api-1.1.1.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/jsr311-api-1.1.1.jar"/>
+    <copy file="${basedir}/lib/commons-lang3-3.9.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/commons-lang3-3.9.jar"/>
+    <copy file="${basedir}/lib/httpclient-4.5.12.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/httpclient-4.5.12.jar"/>
+    <copy file="${basedir}/lib/postgresql-42.2.9.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/postgresql-42.2.9.jar"/>
+    <copy file="${basedir}/lib/commons-codec-1.11.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/commons-codec-1.11.jar"/>
+    <copy file="${basedir}/lib/commons-logging-1.2.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/commons-logging-1.2.jar"/>
+    <copy file="${basedir}/lib/jersey-bundle-1.18.3.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/jersey-bundle-1.18.3.jar"/>
+    <copy file="${basedir}/lib/commons-beanutils-1.9.3.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/commons-beanutils-1.9.3.jar"/>
+    <copy file="${basedir}/lib/commons-collections-3.2.2.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/commons-collections-3.2.2.jar"/>
+    <copy file="${basedir}/lib/commons-configuration2-2.7.jar" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/lib/commons-configuration2-2.7.jar"/>
+    <copy todir="${artifact.output.stravacustom:war_exploded}">
+      <fileset dir="${basedir}/web"/>
+    </copy>
+    <mkdir dir="${artifact.output.stravacustom:war_exploded}/WEB-INF"/>
+    <copy file="${basedir}/web/WEB-INF/web.xml" tofile="${artifact.output.stravacustom:war_exploded}/WEB-INF/web.xml"/>
+  </target>
+  
+  <target name="artifact.stravacustom:war_exploded_prod" depends="init.artifacts, compile.module.stravacustom" description="Build &#39;StravaCustom:war exploded Prod&#39; artifact">
+    <mkdir dir="${artifact.output.stravacustom:war_exploded_prod}"/>
+    <mkdir dir="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF"/>
+    <mkdir dir="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/classes">
+      <fileset dir="${stravacustom.output.dir}"/>
+    </copy>
+    <copy file="${basedir}/resources-prod/config.properties" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/classes/config.properties"/>
+    <mkdir dir="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib"/>
+    <copy file="${basedir}/lib/genson-1.6.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/genson-1.6.jar"/>
+    <copy file="${basedir}/lib/json-20190722.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/json-20190722.jar"/>
+    <copy file="${basedir}/lib/commons-io-2.6.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-io-2.6.jar"/>
+    <copy file="${basedir}/lib/jaxb-api-2.3.1.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/jaxb-api-2.3.1.jar"/>
+    <copy file="${basedir}/lib/commons-cli-1.2.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-cli-1.2.jar"/>
+    <copy file="${basedir}/lib/httpcore-4.4.13.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/httpcore-4.4.13.jar"/>
+    <copy file="${basedir}/lib/commons-text-1.8.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-text-1.8.jar"/>
+    <copy file="${basedir}/lib/jsr311-api-1.1.1.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/jsr311-api-1.1.1.jar"/>
+    <copy file="${basedir}/lib/commons-lang3-3.9.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-lang3-3.9.jar"/>
+    <copy file="${basedir}/lib/httpclient-4.5.12.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/httpclient-4.5.12.jar"/>
+    <copy file="${basedir}/lib/postgresql-42.2.9.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/postgresql-42.2.9.jar"/>
+    <copy file="${basedir}/lib/commons-codec-1.11.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-codec-1.11.jar"/>
+    <copy file="${basedir}/lib/commons-logging-1.2.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-logging-1.2.jar"/>
+    <copy file="${basedir}/lib/jersey-bundle-1.18.3.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/jersey-bundle-1.18.3.jar"/>
+    <copy file="${basedir}/lib/commons-beanutils-1.9.3.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-beanutils-1.9.3.jar"/>
+    <copy file="${basedir}/lib/commons-collections-3.2.2.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-collections-3.2.2.jar"/>
+    <copy file="${basedir}/lib/commons-configuration2-2.7.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-configuration2-2.7.jar"/>
+    <copy file="${basedir}/lib/httpclient-4.5.12.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/httpclient-4.5.12.jar"/>
+    <copy file="${basedir}/lib/httpcore-4.4.13.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/httpcore-4.4.13.jar"/>
+    <copy file="${basedir}/lib/commons-logging-1.2.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-logging-1.2.jar"/>
+    <copy file="${basedir}/lib/commons-codec-1.11.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-codec-1.11.jar"/>
+    <copy file="${basedir}/lib/json-20190722.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/json-20190722.jar"/>
+    <copy file="${basedir}/lib/commons-configuration2-2.7.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-configuration2-2.7.jar"/>
+    <copy file="${basedir}/lib/commons-lang3-3.9.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-lang3-3.9.jar"/>
+    <copy file="${basedir}/lib/commons-text-1.8.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-text-1.8.jar"/>
+    <copy file="${basedir}/lib/commons-logging-1.2.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-logging-1.2.jar"/>
+    <copy file="${basedir}/lib/commons-beanutils-1.9.3.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-beanutils-1.9.3.jar"/>
+    <copy file="${basedir}/lib/commons-logging-1.2.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-logging-1.2.jar"/>
+    <copy file="${basedir}/lib/commons-collections-3.2.2.jar" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/lib/commons-collections-3.2.2.jar"/>
+    <copy todir="${artifact.output.stravacustom:war_exploded_prod}">
+      <fileset dir="${basedir}/web"/>
+    </copy>
+    <mkdir dir="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF"/>
+    <copy file="${basedir}/web/WEB-INF/web.xml" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/web.xml"/>
+    <copy overwrite="true" file="${basedir}/resources-prod/config.properties" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/classes/config.properties"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.stravacustom:jar, artifact.stravacustom:war, artifact.stravacustom:war_exploded, artifact.stravacustom:war_exploded_prod" description="Build all artifacts">
+    <mkdir dir="${artifact.output.stravacustom:jar}"/>
+    <copy todir="${artifact.output.stravacustom:jar}">
+      <fileset dir="${artifact.temp.output.stravacustom:jar}"/>
+    </copy>
+    <mkdir dir="${artifact.output.stravacustom:war}"/>
+    <copy todir="${artifact.output.stravacustom:war}">
+      <fileset dir="${artifact.temp.output.stravacustom:war}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>

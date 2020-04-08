@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="StravaCustom:war exploded Prod">
+    <output-path>$PROJECT_DIR$/out/artifacts/StravaCustom_war_exploded_Prod</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="StravaCustom" />
+          <element id="file-copy" path="$PROJECT_DIR$/resources-prod/config.properties" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="org.apache.httpcomponents:httpclient:4.5.12" />
+          <element id="library" level="project" name="org.json:json:20190722" />
+          <element id="library" level="project" name="org.apache.commons:commons-configuration2:2.7" />
+          <element id="library" level="project" name="commons-beanutils:commons-beanutils:1.9.3" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="StravaCustom/web/Web" />
+    </root>
+  </artifact>
+</component>

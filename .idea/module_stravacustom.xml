@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_stravacustom" default="compile.module.stravacustom">
+  <dirname property="module.stravacustom.basedir" file="${ant.file.module_stravacustom}"/>
+  
+  <property name="module.jdk.home.stravacustom" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.stravacustom" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.stravacustom" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.stravacustom" value="-encoding UTF-8 -source 12 -target 12 ${compiler.args}"/>
+  
+  <property name="stravacustom.output.dir" value="${module.stravacustom.basedir}/../out/production/StravaCustom"/>
+  <property name="stravacustom.testoutput.dir" value="${module.stravacustom.basedir}/../out/test/StravaCustom"/>
+  
+  <path id="stravacustom.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="stravacustom.module.production.classpath">
+    <path refid="${module.jdk.classpath.stravacustom}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.tomcat_9.0.30.classpath"/>
+    <path refid="library.org.apache.httpcomponents:httpclient:4.5.12.classpath"/>
+    <path refid="library.org.json:json:20190722.classpath"/>
+    <path refid="library.org.apache.commons:commons-configuration2:2.7.classpath"/>
+    <path refid="library.commons-beanutils:commons-beanutils:1.9.3.classpath"/>
+  </path>
+  
+  <path id="stravacustom.runtime.production.module.classpath">
+    <pathelement location="${stravacustom.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.org.apache.httpcomponents:httpclient:4.5.12.classpath"/>
+    <path refid="library.org.json:json:20190722.classpath"/>
+    <path refid="library.org.apache.commons:commons-configuration2:2.7.classpath"/>
+    <path refid="library.commons-beanutils:commons-beanutils:1.9.3.classpath"/>
+  </path>
+  
+  <path id="stravacustom.module.classpath">
+    <path refid="${module.jdk.classpath.stravacustom}"/>
+    <pathelement location="${stravacustom.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.tomcat_9.0.30.classpath"/>
+    <path refid="library.org.apache.httpcomponents:httpclient:4.5.12.classpath"/>
+    <path refid="library.org.json:json:20190722.classpath"/>
+    <path refid="library.org.apache.commons:commons-configuration2:2.7.classpath"/>
+    <path refid="library.commons-beanutils:commons-beanutils:1.9.3.classpath"/>
+  </path>
+  
+  <path id="stravacustom.runtime.module.classpath">
+    <pathelement location="${stravacustom.testoutput.dir}"/>
+    <pathelement location="${stravacustom.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.tomcat_9.0.30.classpath"/>
+    <path refid="library.org.apache.httpcomponents:httpclient:4.5.12.classpath"/>
+    <path refid="library.org.json:json:20190722.classpath"/>
+    <path refid="library.org.apache.commons:commons-configuration2:2.7.classpath"/>
+    <path refid="library.commons-beanutils:commons-beanutils:1.9.3.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.stravacustom">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.stravacustom">
+    <patternset refid="excluded.from.module.stravacustom"/>
+  </patternset>
+  
+  <path id="stravacustom.module.sourcepath">
+    <dirset dir="${module.stravacustom.basedir}/../../StravaCustom">
+      <include name="src"/>
+      <include name="resources"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.stravacustom" depends="compile.module.stravacustom.production,compile.module.stravacustom.tests" description="Compile module StravaCustom"/>
+  
+  <target name="compile.module.stravacustom.production" depends="register.custom.compilers" description="Compile module StravaCustom; production classes">
+    <mkdir dir="${stravacustom.output.dir}"/>
+    <javac2 destdir="${stravacustom.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.stravacustom}/javac">
+      <compilerarg line="${compiler.args.stravacustom}"/>
+      <bootclasspath refid="stravacustom.module.bootclasspath"/>
+      <classpath refid="stravacustom.module.production.classpath"/>
+      <src refid="stravacustom.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.stravacustom"/>
+    </javac2>
+    
+    <copy todir="${stravacustom.output.dir}">
+      <fileset dir="${module.stravacustom.basedir}/../src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.stravacustom.basedir}/../resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.stravacustom.tests" depends="register.custom.compilers,compile.module.stravacustom.production" description="compile module StravaCustom; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.stravacustom" description="cleanup module">
+    <delete dir="${stravacustom.output.dir}"/>
+    <delete dir="${stravacustom.testoutput.dir}"/>
+  </target>
+</project>
