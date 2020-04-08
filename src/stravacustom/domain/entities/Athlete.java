@@ -37,8 +37,14 @@ public class Athlete {
         this.firstName = stravaJson.getJSONObject("athlete").getString("firstname");
         this.lastName = stravaJson.getJSONObject("athlete").getString("lastname");
         this.stravaId = stravaJson.getJSONObject("athlete").getBigInteger("id").toString();
-        this.city = stravaJson.getJSONObject("athlete").getString("city");
-        this.profilePic = stravaJson.getJSONObject("athlete").getString("profile");
+        if(stravaJson.getJSONObject("athlete").has("city")){
+            this.city = stravaJson.getJSONObject("athlete").getString("city");
+        }
+
+        if(stravaJson.getJSONObject("athlete").has("profile")){
+            this.profilePic = stravaJson.getJSONObject("athlete").getString("profile");
+        }
+
 
         this.dateCreated = new Date();
         this.dateUpdated = this.dateCreated;

@@ -27,12 +27,17 @@ function viewActivities() {
     let rowHtml = "";
     for (let j = athlete["activities"].length-1; j >= 0; j--) {
         let activity = athlete["activities"][j];
-        let activityId = activity["activityId"]
+        let activityId = activity["activityId"];
+        let type = activity["type"];
+        let pace = 'na'
+        if(type == "Walk" || type == "Run"){
+             pace = speedToPace(activity["averageSpeed"]);
+        }
         let distance = (activity["distance"] / 1000).toFixed(2);
         let name = activity["name"]
         let activityDate =moment(activity["startDate"]).format('MMM Do ddd h:mma');
-        let pace = speedToPace(activity["averageSpeed"]);
-        let type = activity["type"]
+
+
 
 
         rowHtml += rowTemplate
@@ -101,13 +106,17 @@ $(document).ready(function () {
             for (let j = athlete["activities"].length-1; j >= 0; j--) {
                 let activity = athlete["activities"][j];
                 let distance = (activity["distance"] / 1000).toFixed(2);
-                totalKms =  totalKms + parseFloat(distance);
-                let activityDate =moment(activity["startDate"]).format('MMM Do ddd h:mma');
-                let pace = speedToPace(activity["averageSpeed"]);
                 let type = activity["type"]
+                if(type == "Walk" || type == "Run"){
+                    totalKms =  totalKms + parseFloat(distance);
+                }
+
+                let activityDate =moment(activity["startDate"]).format('ddd MMM Do h:mma');
+                let pace = speedToPace(activity["averageSpeed"]);
+
 
                 if(j == athlete["activities"].length-1){
-                    lastActivityData = activityDate + " | " +type+" | "+ distance +" km"
+                    lastActivityData = activityDate + " <br>" +type+" "+ distance +" km"
                 }
 
 
@@ -115,7 +124,7 @@ $(document).ready(function () {
             let  html = athleteTemplate
                 .replace("[profilePic]", athlete["profilePic"])
                 .replace("[name]", athlete["name"])
-                .replace("[total]", totalKms)
+                .replace("[total]", totalKms.toFixed(2))
                 .replace("[lastActivityData]", lastActivityData)
                 .replace("[index]", i)
 
