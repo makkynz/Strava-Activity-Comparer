@@ -50,6 +50,10 @@ function viewActivities() {
 
     $('.activities').html(tblHtml);
 
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(".activities").offset().top
+    }, 500);
+
 
 }
 
@@ -85,7 +89,7 @@ $(document).ready(function () {
         callbackUrl = window.location.origin+"/strava/callback"
         scope = "scope=activity:read";
         window.location = "https://www.strava.com/oauth/authorize" +
-            "?client_id=45153" +
+            "?client_id="+stravaClientId +
             "&response_type=code" +
             "&redirect_uri="+callbackUrl+"" +
             "&approval_prompt=force&"+scope
@@ -93,7 +97,7 @@ $(document).ready(function () {
 
     function renderStats(json){
         dataJson = json;
-        let athleteTemplate = "<div class=\"card\" style=\"width: 19rem;max-width: 19em\">\n" +
+        let athleteTemplate = "<div class=\"card\" style=\"width: 13rem;max-width: 13em\">\n" +
             "    <img class=\"card-img-top\" src=\"[profilePic]\" alt=\"Card image cap\">\n" +
             "    <div class=\"card-body\">\n" +
             "        <h5 class=\"card-title\">[name]</h5>\n" +

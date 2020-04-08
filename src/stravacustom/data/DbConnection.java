@@ -1,5 +1,7 @@
 package stravacustom.data;
 
+import stravacustom.utils.ConfigHelper;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -14,8 +16,9 @@ public class DbConnection implements DbConnectionInterface, AutoCloseable  {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
         try {
-            connection = DriverManager.getConnection("jdbc:postgresql://192.168.1.5:5432/strava-custom", "postgres", "postgres");
+            connection = DriverManager.getConnection(ConfigHelper.get("db.url"), ConfigHelper.get("db.username"), ConfigHelper.get("db.password"));
         } catch (SQLException e) {
            throw new RuntimeException(e);
     }
