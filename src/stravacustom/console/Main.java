@@ -4,12 +4,15 @@ import stravacustom.data.AthleteRepository;
 import stravacustom.domain.entities.Athlete;
 import stravacustom.domain.services.Strava;
 import stravacustom.utils.CliPrinter;
+import stravacustom.utils.LogHelper;
 
 import java.util.List;
 
 public class Main {
 
     public static void main(java.lang.String[] args) {
+        LogHelper.logEnabled = false;
+
         CliPrinter.printLn("Query athletes from DB");
         List<Athlete> athletes = AthleteRepository.getAllAthletes();
         Strava api = new Strava();

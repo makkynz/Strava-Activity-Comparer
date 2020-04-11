@@ -57,7 +57,10 @@
 
     <title>BF Run Club</title>
     <style>
+        .card-img {
 
+            border-radius: 50%;
+        }
         .card-text b {
             font-weight: 200;
         }
@@ -73,6 +76,30 @@
         .alert-danger {
             display: none;
         }
+        .col-md-4{
+            padding: 20px 0 0 20px !important;
+        }
+
+        @media (min-width: 320px) and (max-width: 480px) {
+
+            .table td, .table th {
+                padding: .5rem;
+                font-size: 0.7rem;
+            }
+            .card-img {
+                width: 50%;
+                border-radius: 50%;
+            }
+            .col-md-4{
+                padding: 10px;
+            }
+            .card{
+                text-align: center;
+            }
+
+        }
+
+
 
     </style>
 </head>

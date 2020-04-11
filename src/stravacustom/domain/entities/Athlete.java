@@ -1,6 +1,7 @@
 package stravacustom.domain.entities;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import stravacustom.data.AthleteRepository;
 import stravacustom.domain.services.Strava;
@@ -30,6 +31,13 @@ public class Athlete {
     }
     public Athlete(JSONObject stravaJson) {
         this.id = java.util.UUID.randomUUID();
+        populateFromStravaJson(stravaJson);
+        this.dateCreated = new Date();
+        this.dateUpdated = this.dateCreated;
+
+    }
+
+    private void populateFromStravaJson(JSONObject stravaJson) {
         this.accessToken = stravaJson.getString("access_token");
         this.refreshToken = stravaJson.getString("refresh_token");
         this.tokenExpiry = new Date(Long.parseLong(stravaJson.getBigInteger("expires_at").toString())*1000);
@@ -37,18 +45,17 @@ public class Athlete {
         this.firstName = stravaJson.getJSONObject("athlete").getString("firstname");
         this.lastName = stravaJson.getJSONObject("athlete").getString("lastname");
         this.stravaId = stravaJson.getJSONObject("athlete").getBigInteger("id").toString();
-        if(stravaJson.getJSONObject("athlete").has("city")){
+        try {
             this.city = stravaJson.getJSONObject("athlete").getString("city");
+        } catch (Exception e) {
+           //don't worry about it
         }
 
-        if(stravaJson.getJSONObject("athlete").has("profile")){
+        try {
             this.profilePic = stravaJson.getJSONObject("athlete").getString("profile");
+        } catch (Exception e) {
+            //don't worry about it
         }
-
-
-        this.dateCreated = new Date();
-        this.dateUpdated = this.dateCreated;
-
     }
 
     public String getFullName(){
@@ -58,7 +65,10 @@ public class Athlete {
     public static Athlete getNewOrExisting(JSONObject stravaJson){
         String stravaId = stravaJson.getJSONObject("athlete").getBigInteger("id").toString();
         Athlete existingAthlete = AthleteRepository.getByStravaAthleteId(stravaId);
-        if(existingAthlete !=null) return existingAthlete;
+        if(existingAthlete !=null) {
+            existingAthlete.populateFromStravaJson(stravaJson);
+            return existingAthlete;
+        }
 
         return new Athlete(stravaJson);
     }

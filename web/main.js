@@ -86,6 +86,23 @@ $(document).ready(function () {
 
     function renderStats(json){
         dataJson = json;
+
+        let athleteTemplate2 ="<div class=\"card mb-3\" style=\"max-width: 540px;\">\n" +
+            "  <div class=\"row no-gutters\">\n" +
+            "    <div class=\"col-md-4\">\n" +
+            "      <img src=\"[profilePic]\" class=\"card-img\" alt=\"[profilePic]\">\n" +
+            "    </div>\n" +
+            "    <div class=\"col-md-8\">\n" +
+            "      <div class=\"card-body\">\n" +
+            "        <h5 class=\"card-title\">[name]</h5>\n" +
+            "        <p class=\"card-text\"><b>Total km:</b> [total]</p>\n" +
+            "        <p class=\"card-text\"><b>Last Activity:</b> <br>[lastActivityData]</p>\n" +
+            "        <a href=\"#\" class=\"btn btn-primary btnActivities\" data-index=\"[index]" +
+            "\">View Activities</a>\n" +
+            "      </div>\n" +
+            "    </div>\n" +
+            "  </div>\n" +
+            "</div>"
         let athleteTemplate = "<div class=\"card\" style=\"width: 13rem;max-width: 13em\">\n" +
             "    <img class=\"card-img-top\" src=\"[profilePic]\" alt=\"Card image cap\">\n" +
             "    <div class=\"card-body\">\n" +
@@ -121,7 +138,7 @@ $(document).ready(function () {
 
 
             }
-            let  html = athleteTemplate
+            let  html = athleteTemplate2
                 .replace("[profilePic]", athlete["profilePic"])
                 .replace("[name]", athlete["name"])
                 .replace("[total]", totalKms.toFixed(2))
@@ -142,7 +159,7 @@ $(document).ready(function () {
 
         success: function( data ) {
             renderStats(JSON.parse(data));
-
+            renderStats(JSON.parse(data));renderStats(JSON.parse(data));
 
             $('.btnActivities').on('click', viewActivities)
             console.log(  JSON.parse(data));

@@ -1,5 +1,6 @@
 package stravacustom.utils;
 
+
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -15,6 +16,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+
+import static stravacustom.utils.LogHelper.log;
 
 public class HttpHelper {
 
@@ -42,6 +48,7 @@ public class HttpHelper {
 
         String rawResponse = doRequest(httpGet);
 
+
         return rawResponse;
     }
 
@@ -53,6 +60,7 @@ public class HttpHelper {
         CliPrinter.printLn("HTTP ("+req.getMethod()+") request to " + req.getURI());
         //capture response json
         try {
+            log("REQUEST: " + req.getURI().toString());
             response = httpclient.execute(req);
 
             HttpEntity entity = response.getEntity();
@@ -66,6 +74,8 @@ public class HttpHelper {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        log("RESPONSE: " + rawResponse);
         return rawResponse;
     }
 }
