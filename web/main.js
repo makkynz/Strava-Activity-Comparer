@@ -159,7 +159,7 @@ $(document).ready(function () {
 
         success: function( data ) {
             renderStats(JSON.parse(data));
-            renderStats(JSON.parse(data));renderStats(JSON.parse(data));
+
 
             $('.btnActivities').on('click', viewActivities)
             console.log(  JSON.parse(data));
