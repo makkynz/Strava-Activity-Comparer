@@ -67,15 +67,13 @@ function speedToPace(speed){
 
 }
 
-
-
 let dataJson = null;
-
+let combinedTotal = 0;
 $(document).ready(function () {
 
     $('.alert-danger').toggle(location.search.indexOf("result=noauth") > -1);
     $('.btnGetActivities').on('click', function () {
-        callbackUrl = window.location.origin+"/strava/callback"
+        callbackUrl = window.location.origin+"/callback"
         scope = "scope=activity:read";
         window.location = "https://www.strava.com/oauth/authorize" +
             "?client_id="+stravaClientId +
@@ -126,6 +124,7 @@ $(document).ready(function () {
                 let type = activity["type"]
                 if(type == "Walk" || type == "Run"){
                     totalKms =  totalKms + parseFloat(distance);
+                    combinedTotal =  combinedTotal + parseFloat(distance);
                 }
 
                 let activityDate =moment(activity["startDate"]).format('ddd MMM Do h:mma');
@@ -148,6 +147,8 @@ $(document).ready(function () {
             $('.athletes').append(html)
 
         }
+
+        $('#combined-total').text(combinedTotal.toFixed(2))
     }
 
 
@@ -155,7 +156,7 @@ $(document).ready(function () {
 
     $.ajax({
         dataType: "json",
-        url: "/api/activities",
+        url: "api/activities",
 
         success: function( data ) {
             renderStats(JSON.parse(data));

@@ -30,7 +30,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>StravaCallback</servlet-name>
-        <url-pattern>/strava/callback</url-pattern>
+        <url-pattern>/callback</url-pattern>
     </servlet-mapping>
 
 </web-app>

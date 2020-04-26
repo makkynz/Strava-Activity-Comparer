@@ -1,0 +1,32 @@
+docker build . -t postgres_db --no-cache
+docker run -d -p 5432:5432 --restart unless-stopped postgres_db
+psql -h localhost -U postgres --password
+
+
+docker build -f docker/web/Dockerfile .  -t tomcat_web
+docker run -d -p 8080:8080 --restart unless-stopped tomcat_web
+
+
+
+
+docker stop $(docker ps -q --filter ancestor=tomcat_web) && docker build -f docker/web/Dockerfile .  -t tomcat_web --no-cache &&  docker run -d -p 8080:8080 --restart unless-stopped tomcat_web
+
+docker run --name postgres_db -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres
+
+
+docker exec -it eb421416b32b bash
+
+
+docker run -d --net="host" -it postgres_db
+
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' postgres_db
+
+
+see C:\Users\antho\work\_misc\Virtual Box notes.txt
+
+use docker compose
+
+
+docker cp d0c008b1d53c:/usr/local/tomcat/conf/server.xml /home/anthony/Projects/StravaCustom
+
+docker exec -it 34b559e097ae bash

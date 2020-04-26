@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  tomcat_web:
+    build:
+      context: ..
+      dockerfile: docker/web/Dockerfile
+    container_name: strava_tomcat_web
+    ports:
+      - "8080:8080"
+    depends_on:
+      - "postgresdb"
+
+  postgresdb:
+    build:
+      context: db
+      dockerfile: Dockerfile
+    container_name: strava_postgres_db
+    volumes:
+      - dbdata:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+
+volumes:
+  dbdata: {}

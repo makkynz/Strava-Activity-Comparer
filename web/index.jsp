@@ -119,6 +119,9 @@
     border-color: #fc5c19;">Get My Activities
     </button>
 </p>
+<p>
+    Combined total: <span id="combined-total"></span>km
+</p>
 <div class="athletes card-deck"></div>
 <div class="activities table-responsive">
 

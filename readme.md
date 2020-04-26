@@ -1,4 +1,4 @@
-BD Run Club - Strava Activity Comparer
+BF Run Club - Strava Activity Comparer
 --
 
 Web App and Cli to query activities from Strava official REST APIs.

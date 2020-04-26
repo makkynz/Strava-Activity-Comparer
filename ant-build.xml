@@ -55,86 +55,86 @@
   
   <!-- JDK definitions -->
   
-  <property name="jdk.bin.jdk-13.0.1" value="${jdk.home.jdk-13.0.1}/bin"/>
-  <path id="jdk.classpath.jdk-13.0.1">
-    <fileset dir="${jdk.home.jdk-13.0.1}">
-      <include name="../jdk-13.0.1!/java.base"/>
-      <include name="../jdk-13.0.1!/java.compiler"/>
-      <include name="../jdk-13.0.1!/java.datatransfer"/>
-      <include name="../jdk-13.0.1!/java.desktop"/>
-      <include name="../jdk-13.0.1!/java.instrument"/>
-      <include name="../jdk-13.0.1!/java.logging"/>
-      <include name="../jdk-13.0.1!/java.management"/>
-      <include name="../jdk-13.0.1!/java.management.rmi"/>
-      <include name="../jdk-13.0.1!/java.naming"/>
-      <include name="../jdk-13.0.1!/java.net.http"/>
-      <include name="../jdk-13.0.1!/java.prefs"/>
-      <include name="../jdk-13.0.1!/java.rmi"/>
-      <include name="../jdk-13.0.1!/java.scripting"/>
-      <include name="../jdk-13.0.1!/java.se"/>
-      <include name="../jdk-13.0.1!/java.security.jgss"/>
-      <include name="../jdk-13.0.1!/java.security.sasl"/>
-      <include name="../jdk-13.0.1!/java.smartcardio"/>
-      <include name="../jdk-13.0.1!/java.sql"/>
-      <include name="../jdk-13.0.1!/java.sql.rowset"/>
-      <include name="../jdk-13.0.1!/java.transaction.xa"/>
-      <include name="../jdk-13.0.1!/java.xml"/>
-      <include name="../jdk-13.0.1!/java.xml.crypto"/>
-      <include name="../jdk-13.0.1!/jdk.accessibility"/>
-      <include name="../jdk-13.0.1!/jdk.aot"/>
-      <include name="../jdk-13.0.1!/jdk.attach"/>
-      <include name="../jdk-13.0.1!/jdk.charsets"/>
-      <include name="../jdk-13.0.1!/jdk.compiler"/>
-      <include name="../jdk-13.0.1!/jdk.crypto.cryptoki"/>
-      <include name="../jdk-13.0.1!/jdk.crypto.ec"/>
-      <include name="../jdk-13.0.1!/jdk.crypto.mscapi"/>
-      <include name="../jdk-13.0.1!/jdk.dynalink"/>
-      <include name="../jdk-13.0.1!/jdk.editpad"/>
-      <include name="../jdk-13.0.1!/jdk.hotspot.agent"/>
-      <include name="../jdk-13.0.1!/jdk.httpserver"/>
-      <include name="../jdk-13.0.1!/jdk.internal.ed"/>
-      <include name="../jdk-13.0.1!/jdk.internal.jvmstat"/>
-      <include name="../jdk-13.0.1!/jdk.internal.le"/>
-      <include name="../jdk-13.0.1!/jdk.internal.opt"/>
-      <include name="../jdk-13.0.1!/jdk.internal.vm.ci"/>
-      <include name="../jdk-13.0.1!/jdk.internal.vm.compiler"/>
-      <include name="../jdk-13.0.1!/jdk.internal.vm.compiler.management"/>
-      <include name="../jdk-13.0.1!/jdk.jartool"/>
-      <include name="../jdk-13.0.1!/jdk.javadoc"/>
-      <include name="../jdk-13.0.1!/jdk.jcmd"/>
-      <include name="../jdk-13.0.1!/jdk.jconsole"/>
-      <include name="../jdk-13.0.1!/jdk.jdeps"/>
-      <include name="../jdk-13.0.1!/jdk.jdi"/>
-      <include name="../jdk-13.0.1!/jdk.jdwp.agent"/>
-      <include name="../jdk-13.0.1!/jdk.jfr"/>
-      <include name="../jdk-13.0.1!/jdk.jlink"/>
-      <include name="../jdk-13.0.1!/jdk.jshell"/>
-      <include name="../jdk-13.0.1!/jdk.jsobject"/>
-      <include name="../jdk-13.0.1!/jdk.jstatd"/>
-      <include name="../jdk-13.0.1!/jdk.localedata"/>
-      <include name="../jdk-13.0.1!/jdk.management"/>
-      <include name="../jdk-13.0.1!/jdk.management.agent"/>
-      <include name="../jdk-13.0.1!/jdk.management.jfr"/>
-      <include name="../jdk-13.0.1!/jdk.naming.dns"/>
-      <include name="../jdk-13.0.1!/jdk.naming.rmi"/>
-      <include name="../jdk-13.0.1!/jdk.net"/>
-      <include name="../jdk-13.0.1!/jdk.pack"/>
-      <include name="../jdk-13.0.1!/jdk.rmic"/>
-      <include name="../jdk-13.0.1!/jdk.scripting.nashorn"/>
-      <include name="../jdk-13.0.1!/jdk.scripting.nashorn.shell"/>
-      <include name="../jdk-13.0.1!/jdk.sctp"/>
-      <include name="../jdk-13.0.1!/jdk.security.auth"/>
-      <include name="../jdk-13.0.1!/jdk.security.jgss"/>
-      <include name="../jdk-13.0.1!/jdk.unsupported"/>
-      <include name="../jdk-13.0.1!/jdk.unsupported.desktop"/>
-      <include name="../jdk-13.0.1!/jdk.xml.dom"/>
-      <include name="../jdk-13.0.1!/jdk.zipfs"/>
+  <property name="jdk.bin.11" value="${jdk.home.11}/bin"/>
+  <path id="jdk.classpath.11">
+    <fileset dir="${jdk.home.11}">
+      <include name="../jdk11.0.7_10!/java.base"/>
+      <include name="../jdk11.0.7_10!/java.compiler"/>
+      <include name="../jdk11.0.7_10!/java.datatransfer"/>
+      <include name="../jdk11.0.7_10!/java.desktop"/>
+      <include name="../jdk11.0.7_10!/java.instrument"/>
+      <include name="../jdk11.0.7_10!/java.logging"/>
+      <include name="../jdk11.0.7_10!/java.management"/>
+      <include name="../jdk11.0.7_10!/java.management.rmi"/>
+      <include name="../jdk11.0.7_10!/java.naming"/>
+      <include name="../jdk11.0.7_10!/java.net.http"/>
+      <include name="../jdk11.0.7_10!/java.prefs"/>
+      <include name="../jdk11.0.7_10!/java.rmi"/>
+      <include name="../jdk11.0.7_10!/java.scripting"/>
+      <include name="../jdk11.0.7_10!/java.se"/>
+      <include name="../jdk11.0.7_10!/java.security.jgss"/>
+      <include name="../jdk11.0.7_10!/java.security.sasl"/>
+      <include name="../jdk11.0.7_10!/java.smartcardio"/>
+      <include name="../jdk11.0.7_10!/java.sql"/>
+      <include name="../jdk11.0.7_10!/java.sql.rowset"/>
+      <include name="../jdk11.0.7_10!/java.transaction.xa"/>
+      <include name="../jdk11.0.7_10!/java.xml"/>
+      <include name="../jdk11.0.7_10!/java.xml.crypto"/>
+      <include name="../jdk11.0.7_10!/jdk.accessibility"/>
+      <include name="../jdk11.0.7_10!/jdk.aot"/>
+      <include name="../jdk11.0.7_10!/jdk.attach"/>
+      <include name="../jdk11.0.7_10!/jdk.charsets"/>
+      <include name="../jdk11.0.7_10!/jdk.compiler"/>
+      <include name="../jdk11.0.7_10!/jdk.crypto.cryptoki"/>
+      <include name="../jdk11.0.7_10!/jdk.crypto.ec"/>
+      <include name="../jdk11.0.7_10!/jdk.crypto.mscapi"/>
+      <include name="../jdk11.0.7_10!/jdk.dynalink"/>
+      <include name="../jdk11.0.7_10!/jdk.editpad"/>
+      <include name="../jdk11.0.7_10!/jdk.hotspot.agent"/>
+      <include name="../jdk11.0.7_10!/jdk.httpserver"/>
+      <include name="../jdk11.0.7_10!/jdk.internal.ed"/>
+      <include name="../jdk11.0.7_10!/jdk.internal.jvmstat"/>
+      <include name="../jdk11.0.7_10!/jdk.internal.le"/>
+      <include name="../jdk11.0.7_10!/jdk.internal.opt"/>
+      <include name="../jdk11.0.7_10!/jdk.internal.vm.ci"/>
+      <include name="../jdk11.0.7_10!/jdk.internal.vm.compiler"/>
+      <include name="../jdk11.0.7_10!/jdk.internal.vm.compiler.management"/>
+      <include name="../jdk11.0.7_10!/jdk.jartool"/>
+      <include name="../jdk11.0.7_10!/jdk.javadoc"/>
+      <include name="../jdk11.0.7_10!/jdk.jcmd"/>
+      <include name="../jdk11.0.7_10!/jdk.jconsole"/>
+      <include name="../jdk11.0.7_10!/jdk.jdeps"/>
+      <include name="../jdk11.0.7_10!/jdk.jdi"/>
+      <include name="../jdk11.0.7_10!/jdk.jdwp.agent"/>
+      <include name="../jdk11.0.7_10!/jdk.jfr"/>
+      <include name="../jdk11.0.7_10!/jdk.jlink"/>
+      <include name="../jdk11.0.7_10!/jdk.jshell"/>
+      <include name="../jdk11.0.7_10!/jdk.jsobject"/>
+      <include name="../jdk11.0.7_10!/jdk.jstatd"/>
+      <include name="../jdk11.0.7_10!/jdk.localedata"/>
+      <include name="../jdk11.0.7_10!/jdk.management"/>
+      <include name="../jdk11.0.7_10!/jdk.management.agent"/>
+      <include name="../jdk11.0.7_10!/jdk.management.jfr"/>
+      <include name="../jdk11.0.7_10!/jdk.naming.dns"/>
+      <include name="../jdk11.0.7_10!/jdk.naming.rmi"/>
+      <include name="../jdk11.0.7_10!/jdk.net"/>
+      <include name="../jdk11.0.7_10!/jdk.pack"/>
+      <include name="../jdk11.0.7_10!/jdk.rmic"/>
+      <include name="../jdk11.0.7_10!/jdk.scripting.nashorn"/>
+      <include name="../jdk11.0.7_10!/jdk.scripting.nashorn.shell"/>
+      <include name="../jdk11.0.7_10!/jdk.sctp"/>
+      <include name="../jdk11.0.7_10!/jdk.security.auth"/>
+      <include name="../jdk11.0.7_10!/jdk.security.jgss"/>
+      <include name="../jdk11.0.7_10!/jdk.unsupported"/>
+      <include name="../jdk11.0.7_10!/jdk.unsupported.desktop"/>
+      <include name="../jdk11.0.7_10!/jdk.xml.dom"/>
+      <include name="../jdk11.0.7_10!/jdk.zipfs"/>
     </fileset>
   </path>
   
-  <property name="project.jdk.home" value="${jdk.home.jdk-13.0.1}"/>
-  <property name="project.jdk.bin" value="${jdk.bin.jdk-13.0.1}"/>
-  <property name="project.jdk.classpath" value="jdk.classpath.jdk-13.0.1"/>
+  <property name="project.jdk.home" value="${jdk.home.11}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.11}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.11"/>
   
   
   <!-- Project Libraries -->
@@ -206,7 +206,7 @@
   <property name="module.jdk.bin.stravacustom" value="${project.jdk.bin}"/>
   <property name="module.jdk.classpath.stravacustom" value="${project.jdk.classpath}"/>
   
-  <property name="compiler.args.stravacustom" value="-encoding UTF-8 -source 12 -target 12 ${compiler.args}"/>
+  <property name="compiler.args.stravacustom" value="-encoding UTF-8 -source 11 -target 11 ${compiler.args}"/>
   
   <property name="stravacustom.output.dir" value="${module.stravacustom.basedir}/out/production/StravaCustom"/>
   <property name="stravacustom.testoutput.dir" value="${module.stravacustom.basedir}/out/test/StravaCustom"/>
@@ -322,7 +322,7 @@
     <property name="temp.jar.path.StravaCustom.jar" value="${artifacts.temp.dir}/StravaCustom.jar"/>
     <property name="temp.jar.path.StravaCustom_war.war" value="${artifacts.temp.dir}/StravaCustom_war.war"/>
   </target>
-
+  
   <target name="clean.artifact.stravacustom:war_exploded" description="clean StravaCustom:war exploded artifact output">
     <delete dir="${artifact.output.stravacustom:war_exploded}"/>
   </target>
@@ -453,7 +453,6 @@
     </copy>
     <mkdir dir="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF"/>
     <copy file="${basedir}/web/WEB-INF/web.xml" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/web.xml"/>
-    <copy overwrite="true" file="${basedir}/resources-prod/config.properties" tofile="${artifact.output.stravacustom:war_exploded_prod}/WEB-INF/classes/config.properties"/>
   </target>
   
   <target name="build.all.artifacts" depends="artifact.stravacustom:jar, artifact.stravacustom:war, artifact.stravacustom:war_exploded, artifact.stravacustom:war_exploded_prod" description="Build all artifacts">
