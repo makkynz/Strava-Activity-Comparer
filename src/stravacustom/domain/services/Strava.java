@@ -30,7 +30,7 @@ public class Strava {
         }
         List<NameValuePair> headers = new ArrayList<>(2);
         headers.add(new BasicNameValuePair("Authorization", "Bearer " +accessToken));
-        String rawResponse = HttpHelper.Get("https://www.strava.com/api/v3/athlete/activities?after="+lockDownStartEpoch, headers);
+        String rawResponse = HttpHelper.Get("https://www.strava.com/api/v3/athlete/activities?per_page=100&after="+lockDownStartEpoch, headers);
 
         return JsonHelper.parseStringToArray(rawResponse);
     }
